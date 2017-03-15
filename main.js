@@ -21,8 +21,8 @@ module.exports = {
     // },
 
     sum: (arr, base) => {
-        var sum = arr.reduce((start, number) => {
-            return start + number;
+        var sum = arr.reduce((previous, current) => {
+            return previous + current;
         }, base);
         return sum;
     },
