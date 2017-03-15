@@ -45,15 +45,24 @@ module.exports = {
         });
     },
 
+    // convertNameArrayToObject: (arr) => {
+    //     let nameObj = [];
+    //     for (var i = 0; i < arr.length; i++) {
+    //         let obj = {};
+    //         obj.first = arr[i][0];
+    //         obj.last = arr[i][1];
+    //         nameObj.push(obj);
+    //     }
+    //     return nameObj;
+    // },
+
     convertNameArrayToObject: (arr) => {
-        let nameObj = [];
-        for (var i = 0; i < arr.length; i++) {
-            let obj = {};
-            obj.first = arr[i][0];
-            obj.last = arr[i][1];
-            nameObj.push(obj);
-        }
-        return nameObj;
+        return arr.map((name) => {
+            var nameObj = {};
+            nameObj.first = name[0];
+            nameObj.last = name[1];
+            return nameObj;
+        });
     },
 
     objContainsProp: (arr, prop) => {
