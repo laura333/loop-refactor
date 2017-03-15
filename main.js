@@ -65,13 +65,22 @@ module.exports = {
         });
     },
 
+    // objContainsProp: (arr, prop) => {
+    //     for (var i = 0; i < arr.length; i++) {
+    //         if (!arr[i].hasOwnProperty(prop)) {
+    //             return false;
+    //         }
+    //     }
+    //     return true;
+    // },
+
     objContainsProp: (arr, prop) => {
-        for (var i = 0; i < arr.length; i++) {
-            if (!arr[i].hasOwnProperty(prop)) {
-                return false;
+        return arr.every((arrProp) => {
+            if (arrProp.hasOwnProperty(prop)) {
+                return true;
             }
-        }
-        return true;
+            return false;
+        });
     },
 
     stringMatch: (arr, str) => {
